@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Charlotte Courier Service</title>
+    <link rel='stylesheet' type="text/css" href='../assets/stylesheets/index.css'>
+</head>
+<body>  
+    <%- include ('partials/header.ejs') %>
+    <div class ="spaces">
+        <form id ="contact-form">
+            <label for ="tracking_num">Tracking_number</label>
+            <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
+            <button onclick="window.location.href = '/v1/tracking/${}'">Submit</button>
+        </form>
+    </div>
+<script>
+        let numbers = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addTrackingNum = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let number = {
+                tracking_num: document.getElementById('tracking_num').value
+                
+            }
+            numbers.push(number);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {numbers} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(numbers, '\t', 2);
+
+            //saving to localStorage
+            localStorage.setItem('MyMovieList', JSON.stringify(numbers) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('contact-form').addEventListener('click', addTrackingNum);
+        });
+    </script>
+    <!-- <%- include('partials/footer.ejs') %> -->
+
+    </body>
+    </html>

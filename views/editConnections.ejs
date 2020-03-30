@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courier Service</title>
+    <link rel='stylesheet' type="text/css" href='../assets/stylesheets/index.css'>
+</head>
+<body>  
+    <%- include ('partials/header.ejs') %>
+    <h3>Please fill the below details and submit your changes</h3>
+    <div class ="spaces">
+        <form id ="contact-form">
+        <label for ="tracking_num">Tracking_number</label>
+        <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
+        <label for ="src">Source</label>
+        <input type = "text" id="src" name ="src" placeholder ="src"/><br><br>
+        <label for ="sender_mobile_num">sender_mobile_num</label>
+        <input type ="text" id="sender_mobile_num" name ="sender_mobile_num"placeholder ="mobile_num"/><br><br>
+        <label for ="destination">Destination </label>
+        <input type ="text" id="destination" name ="destination" placeholder ="location"/><br><br>
+        <label for ="receiver_mobile_num">receiver_mobile_num</label>
+        <input type ="text" id="receiver_mobile_num" name ="receiver_mobile_num"placeholder ="mobile_num"/><br><br>
+        <label for ="shipment-type">shipment-type</label>
+        <input type ="text" id="shipment-type" name ="shipment-type"placeholder ="shipment-type"/><br><br>
+         </form>
+    <button>Submit</button>
+    </div>
+
+    <h3>Please give the tracking_num below to cancel the order</h3>
+    <div class ="spaces">
+        <form id ="contact-form">
+        <label for ="tracking_num">Tracking_number</label>
+        <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
+    </form>
+    <button>Submit</button>
+    </div>
+    <%- include('partials/footer.ejs') %>
+
+  </body>
+</html>
