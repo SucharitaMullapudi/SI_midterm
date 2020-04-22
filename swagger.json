@@ -1,0 +1,212 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tracking Datavbase",
+    "description": "Courier Service Database",
+    "license": {
+      "name": "Harry",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "Tracking",
+      "description": "API for tracking system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tracking": {
+      "post": {
+        "tags": [
+          "Tracking"
+        ],
+        "description": "Create new courier request in system",
+        "parameters": [
+          {
+            "name": "tracking",
+            "in": "body",
+            "description": "Customer want to create a courier",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Shipment Created",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Updated the shipment details",
+        "tags": [
+          "Tracking"
+        ],
+        "description": "updating courier request in system",
+        "parameters": [
+          {
+            "name": "tracking",
+            "in": "body",
+            "description": "Customer want to update the courier",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Shipment Updated",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updated the destination address of a shipment",
+        "tags": [
+          "Tracking"
+        ],
+        "description": "Create new courier request in system",
+        "parameters": [
+          {
+            "name": "tracking",
+            "in": "body",
+            "description": "Customer want to update destination of courier",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Shipment destination Updated",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      }
+    },
+    "/tracking/{tracking_num}": {
+      "parameters": [
+        {
+          "name": "tracking_num",
+          "in": "path",
+          "required": true,
+          "description": "tracking number need to be provided for shipment tracking",
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Tracking"
+        ],
+        "summary": "Get tracking number with given tracking number",
+        "responses": {
+          "200": {
+            "description": "shipment found",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deleting shipment with tracking number",
+        "tags": [
+          "Tracking"
+        ],
+        "responses": {
+          "200": {
+            "description": "Shipment deleted",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update shipment with given details",
+        "tags": [
+          "Tracking"
+        ],
+        "parameters": [
+          {
+            "name": "tracking",
+            "in": "body",
+            "description": "tracking ",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "shipment is updated",
+            "schema": {
+              "$ref": "#/definitions/tracking"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "tracking": {
+      "required": [
+        "tracking_num",
+        "destination"
+      ],
+      "properties": {
+        "tracking_num": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "tracking_status": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "src": {
+          "type": "string"
+        },
+        "sender_mobile_num": {
+          "type": "integer"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "receiver_mobile_num": {
+          "type": "integer"
+        },
+        "shipment_type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

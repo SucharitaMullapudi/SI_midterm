@@ -11,7 +11,7 @@
     <%- include ('partials/header.ejs') %>
     <h3>Please enter below details to place an order</h3>
  <div class ="spaces">
-    <form id ="contact-form">
+    <form id ="contact-form" action ='/newOrder' method = 'POST'>
         <label for ="src">Source</label>
         <input type = "text" id="src" name ="src" placeholder ="src"/><br><br>
         <label for ="sender_mobile_num">sender_mobile_num</label>
@@ -22,12 +22,12 @@
         <input type ="text" id="receiver_mobile_num" name ="receiver_mobile_num"placeholder ="mobile_num"/><br><br>
         <label for ="shipment-type">shipment-type</label>
         <input type ="text" id="shipment-type" name ="shipment-type"placeholder ="shipment-type"/><br><br>
-        
+        <button>Submit</button>
 </form>
-<button>Submit</button>
+
 </div>
         
-<%- include('partials/footer.ejs') %>
+<!-- <%- include('partials/footer.ejs') %> -->
 
   </body>
 </html>

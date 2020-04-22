@@ -11,7 +11,7 @@
     <%- include ('partials/header.ejs') %>
     <h3>Please fill the below details and submit your changes</h3>
     <div class ="spaces">
-        <form id ="contact-form">
+        <form id ="contact-form" action='/editConnections' method ='POST'>
         <label for ="tracking_num">Tracking_number</label>
         <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
         <label for ="src">Source</label>
@@ -24,19 +24,12 @@
         <input type ="text" id="receiver_mobile_num" name ="receiver_mobile_num"placeholder ="mobile_num"/><br><br>
         <label for ="shipment-type">shipment-type</label>
         <input type ="text" id="shipment-type" name ="shipment-type"placeholder ="shipment-type"/><br><br>
+        <button>Submit</button>
          </form>
-    <button>Submit</button>
+    
     </div>
 
-    <h3>Please give the tracking_num below to cancel the order</h3>
-    <div class ="spaces">
-        <form id ="contact-form">
-        <label for ="tracking_num">Tracking_number</label>
-        <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
-    </form>
-    <button>Submit</button>
-    </div>
-    <%- include('partials/footer.ejs') %>
+    
 
   </body>
 </html>

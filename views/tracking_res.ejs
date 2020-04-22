@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courier Service</title>
+    <link rel='stylesheet' type="text/css" href='../assets/stylesheets/index.css'>
+</head>
+<body>  
+    <%- include ('partials/header.ejs') %>
+    <h3>Please fill the below details and submit your changes</h3>
+    <div class ="spaces">
+        <label for ="tracking_num">Tracking_number</label>
+        <input type ="text" id="tracking_num" name ="tracking_num"  value= "<%= data[0].tracking_num %>"> 
+        <br><br>
+        <label for ="package_status">Package_status</label>
+        <input type ="text" id="package_status" name ="package_status" value= "<%= data[0].package_status %>" ><br><br>
+        <label for ="src">Source</label>
+        <input type = "text" id="src" name ="src" value= "<%= data[0].src %>"><br><br>
+        <label for ="sender_mobile_num">sender_mobile_num</label>
+        <input type ="text" id="sender_mobile_num" name ="sender_mobile_num" value= "<%= data[0].sender_mobile_num %>"/><br><br>
+        <label for ="destination">Destination </label>
+        <input type ="text" id="destination" name ="destination" value= "<%= data[0].destination %>" /><br><br>
+        <label for ="receiver_mobile_num">receiver_mobile_num</label>
+        <input type ="text" id="receiver_mobile_num" name ="receiver_mobile_num" value= "<%= data[0].receiver_mobile_num %>"/><br><br>
+        <label for ="shipment-type">shipment-type</label>
+        <input type ="text" id="shipment-type" name ="shipment-type" value= "<%= data[0].shipment_type %>"/><br><br>
+         </form>
+    </div>
+
+    
+
+  </body>
+</html>

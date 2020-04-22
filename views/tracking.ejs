@@ -10,13 +10,13 @@
 <body>  
     <%- include ('partials/header.ejs') %>
     <div class ="spaces">
-        <form id ="contact-form">
+        <form id ="contact-form" action="/tracking" method="GET">
             <label for ="tracking_num">Tracking_number</label>
             <input type ="text" id="tracking_num" name ="tracking_num" placeholder ="tracking_num"><br><br>
-            <button onclick="window.location.href = '/v1/tracking/${}'">Submit</button>
+            <input type="submit" value="Submit">
         </form>
     </div>
-<script>
+<!-- <script>
         let numbers = [];
         // example {id:1592304983049, title: 'Deadpool', year: 2015}
         const addTrackingNum = (ev)=>{
@@ -40,7 +40,7 @@
         document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('contact-form').addEventListener('click', addTrackingNum);
         });
-    </script>
+    </script> -->
     <!-- <%- include('partials/footer.ejs') %> -->
 
     </body>
