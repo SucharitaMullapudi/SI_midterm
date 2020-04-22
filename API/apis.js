@@ -8,10 +8,10 @@ var urlEncodedParser = bodyParser.urlencoded({ extended: false });
 
 
 var connection = mysql.createConnection({
-    // host: 'courierdb.cia0fvcbamfe.us-east-2.rds.amazonaws.com',
-    // user: 'admin',
-    host:'localhost',
-    user: 'root',
+    host: 'courierdb.cia0fvcbamfe.us-east-2.rds.amazonaws.com',
+    user: 'admin',
+    // host:'localhost',
+    // user: 'root',
     password: 'Saibaba!123',
     database: 'tracking_sys'
 });

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fetch = require('node-fetch');
-const env = 'localhost';
+const env = 'http://165.227.109.228:3000/';
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlEncodedParser = bodyParser.urlencoded({ extended: false });
